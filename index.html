@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Dosel — Sonido honesto. Pronto.</title>
-<meta name="description" content="Dosel — Parlantes HiFi diseñados en Chile. Sonido de alta fidelidad a precio accesible. Próximamente.">
+<title>Dosel — El Hi-Fi explicado, diseñado y construido por ti.</title>
+<meta name="description" content="Dosel — HiFi diseñado y construido en Chile. El sonido de alta fidelidad explicado, diseñado y armado por ti. Próximamente.">
 <meta name="theme-color" content="#0A0A0A">
 
-<meta property="og:title" content="Dosel — Sonido honesto">
-<meta property="og:description" content="Parlantes HiFi diseñados en Chile. Próximamente.">
+<meta property="og:title" content="Dosel — El Hi-Fi explicado, diseñado y construido por ti">
+<meta property="og:description" content="HiFi DIY y ensamblado, diseñado en Chile. Próximamente.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="/og.png">
 
@@ -134,27 +134,36 @@
 
   h1 {
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: clamp(42px, 10vw, 140px);
-    line-height: 0.88;
-    letter-spacing: -0.055em;
     margin-bottom: 32px;
-    word-break: keep-all;
+    align-self: stretch;
+    max-width: 100%;
   }
 
   h1 .line {
     display: block;
-    overflow: hidden;
+  }
+
+  h1 .line-lead {
+    font-weight: 700;
+    font-size: clamp(56px, 12vw, 140px);
+    line-height: 0.88;
+    letter-spacing: -0.055em;
+  }
+
+  h1 .line-sub {
+    font-weight: 300;
+    font-style: italic;
+    opacity: 0.75;
+    font-size: clamp(22px, 3.2vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-top: 16px;
+    max-width: min(640px, 100%);
+    overflow-wrap: break-word;
   }
 
   h1 .line span {
     display: block;
-  }
-
-  h1 .line:nth-child(2) span {
-    font-weight: 300;
-    font-style: italic;
-    opacity: 0.7;
   }
 
   .lead {
@@ -312,7 +321,9 @@
   /* Mobile */
   @media (max-width: 600px) {
     .eyebrow { margin-bottom: 24px; }
-    h1 { margin-bottom: 24px; font-size: clamp(40px, 10vw, 64px); }
+    h1 { margin-bottom: 24px; }
+    h1 .line-lead { font-size: clamp(46px, 12vw, 72px); }
+    h1 .line-sub { font-size: clamp(18px, 4.5vw, 24px); margin-top: 12px; }
     .lead { margin-bottom: 36px; }
     header .mark span { display: none; }
     header .status span:last-child { display: none; }
@@ -342,8 +353,8 @@
     <div class="eyebrow">Dosel Audio · Santiago de Chile</div>
 
     <h1>
-      <span class="line"><span>Pronto.</span></span>
-      <span class="line"><span>Sonido honesto.</span></span>
+      <span class="line line-lead"><span>Pronto.</span></span>
+      <span class="line line-sub"><span>El Hi-Fi explicado, diseñado y construido por ti.</span></span>
     </h1>
 
     <p class="lead">
