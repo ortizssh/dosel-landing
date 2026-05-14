@@ -25,7 +25,6 @@
     --ink: #0A0A0A;
     --paper: #FAFAFA;
     --mute: rgba(250, 250, 250, 0.55);
-    --hairline: rgba(250, 250, 250, 0.12);
   }
 
   html, body {
@@ -35,151 +34,67 @@
     font-family: 'Inter', -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
   }
 
   body {
     display: flex;
-    flex-direction: column;
     min-height: 100vh;
     min-height: 100dvh;
   }
 
-  .frame {
+  .center {
     flex: 1;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    padding: clamp(20px, 4vw, 48px);
-    position: relative;
-  }
-
-  /* Top bar */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--mute);
-  }
-
-  header .mark {
-    display: flex;
-    align-items: center;
-  }
-
-  header .mark img {
-    width: auto;
-    height: clamp(36px, 5vw, 52px);
-    display: block;
-  }
-
-  header .status {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--paper);
-    animation: pulse 2.4s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.25; }
-  }
-
-  /* Main */
-  main {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 480px);
-    gap: clamp(40px, 5vw, 80px);
-    align-items: center;
-    justify-content: center;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: clamp(40px, 8vw, 80px) 0;
-    width: 100%;
-  }
-
-  .main-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    max-width: 640px;
-    min-width: 0;
-  }
-
-  .main-mark {
-    display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 0;
+    padding: 32px;
+    text-align: center;
   }
 
-  .main-mark img {
+  .center img {
     width: 100%;
     max-width: 320px;
     height: auto;
     display: block;
-    opacity: 0.95;
   }
 
-  h1 {
+  .pronto {
     font-family: 'Space Grotesk', sans-serif;
-    align-self: stretch;
-    max-width: 100%;
+    font-weight: 500;
+    font-size: clamp(20px, 3vw, 28px);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-top: 32px;
   }
 
-  h1 .line {
-    display: block;
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.025;
+    mix-blend-mode: screen;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
 
-  h1 .line-lead {
-    font-weight: 700;
-    font-size: clamp(56px, 12vw, 140px);
-    line-height: 0.88;
-    letter-spacing: -0.055em;
-  }
-
-  h1 .line-sub {
-    font-weight: 300;
-    font-style: italic;
-    opacity: 0.75;
-    font-size: clamp(22px, 3.2vw, 40px);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    margin-top: 16px;
-    max-width: min(640px, 100%);
-    overflow-wrap: break-word;
-  }
-
-  h1 .line span {
-    display: block;
-  }
-
-  /* Footer */
   footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     gap: 24px;
     flex-wrap: wrap;
+    padding: clamp(16px, 3vw, 32px) clamp(20px, 4vw, 48px);
     font-family: 'Space Grotesk', sans-serif;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--mute);
-    padding-top: 40px;
-    border-top: 1px solid var(--hairline);
   }
 
   footer a {
@@ -199,42 +114,9 @@
     align-items: center;
   }
 
-  /* Background subtle grain */
-  .grain {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.025;
-    mix-blend-mode: screen;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-    z-index: 0;
-  }
-
-  .frame > * { position: relative; z-index: 1; }
-
-  /* Mobile */
-  @media (max-width: 900px) {
-    main {
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
-    .main-mark {
-      order: -1;
-      justify-content: flex-start;
-    }
-    .main-mark img {
-      max-width: 140px;
-    }
-  }
-
   @media (max-width: 600px) {
-    h1 .line-lead { font-size: clamp(46px, 12vw, 72px); }
-    h1 .line-sub { font-size: clamp(18px, 4.5vw, 24px); margin-top: 12px; }
-    header .status span:last-child { display: none; }
     footer { gap: 16px; }
     footer .foot-col { gap: 18px; flex-wrap: wrap; }
-    .main-mark img { max-width: 110px; }
-    main { gap: 32px; }
   }
 </style>
 </head>
@@ -242,42 +124,20 @@
 
 <div class="grain"></div>
 
-<div class="frame">
-
-  <header>
-    <div class="mark">
-      <img src="logo.svg" alt="Dosel">
-    </div>
-    <div class="status">
-      <span class="dot"></span>
-      <span>Pronto · 2026</span>
-    </div>
-  </header>
-
-  <main>
-    <div class="main-content">
-      <h1>
-        <span class="line line-lead"><span>Pronto.</span></span>
-        <span class="line line-sub"><span>Hi-Fi diseñado y armado por ti.</span></span>
-      </h1>
-    </div>
-
-    <div class="main-mark" aria-hidden="true">
-      <img src="isotype.svg" alt="">
-    </div>
-  </main>
-
-  <footer>
-    <div class="foot-col">
-      <span>© 2026 Dosel Audio</span>
-    </div>
-    <div class="foot-col">
-      <a href="mailto:info@doselaudio.com">info@doselaudio.com</a>
-      <a href="https://instagram.com/dosel.audio" target="_blank" rel="noopener" aria-label="Instagram @dosel.audio">@dosel.audio</a>
-    </div>
-  </footer>
-
+<div class="center">
+  <img src="logo.svg" alt="Dosel">
+  <div class="pronto">Pronto</div>
 </div>
+
+<footer>
+  <div class="foot-col">
+    <span>© 2026 Dosel Audio</span>
+  </div>
+  <div class="foot-col">
+    <a href="mailto:info@doselaudio.com">info@doselaudio.com</a>
+    <a href="https://instagram.com/dosel.audio" target="_blank" rel="noopener" aria-label="Instagram @dosel.audio">@dosel.audio</a>
+  </div>
+</footer>
 
 </body>
 </html>
