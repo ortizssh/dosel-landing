@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Política de Privacidad — Dosel Booklet</title>
+<meta name="description" content="Cómo Dosel Booklet trata (y no trata) tus datos.">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" type="image/svg+xml" href="/isotype.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --ink: #0A0A0A; --paper: #FAFAFA; --mute: rgba(250,250,250,0.55); --faint: rgba(250,250,250,0.30); --line: rgba(250,250,250,0.12); }
+  html, body { background: var(--ink); color: var(--paper); font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  .grain { position: fixed; inset: 0; pointer-events: none; opacity: 0.025; mix-blend-mode: screen; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
+  .wrap { max-width: 640px; margin: 0 auto; padding: clamp(48px, 10vw, 96px) clamp(24px, 6vw, 32px) 140px; }
+  .kicker { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint); }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(32px, 7vw, 44px); letter-spacing: -0.02em; margin: 16px 0 6px; }
+  .updated { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; color: var(--faint); }
+  h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 20px; letter-spacing: -0.01em; margin: 44px 0 8px; }
+  p { color: var(--mute); font-size: 16px; line-height: 1.65; margin-bottom: 10px; }
+  strong { color: var(--paper); font-weight: 500; }
+  a { color: var(--paper); }
+  footer { position: fixed; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; padding: clamp(16px,3vw,32px) clamp(20px,4vw,48px); font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); background: linear-gradient(to top, var(--ink) 60%, transparent); }
+  footer a { color: var(--paper); text-decoration: none; opacity: 0.6; transition: opacity .3s ease; }
+  footer a:hover { opacity: 1; }
+  .foot-col { display: flex; gap: 24px; align-items: center; }
+  @media (max-width: 600px) { .foot-col { gap: 16px; flex-wrap: wrap; } }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="wrap">
+  <div class="kicker">Dosel · Booklet</div>
+  <h1>Política de Privacidad</h1>
+  <p class="updated">Última actualización: 14 de julio de 2026</p>
+
+  <h2>Resumen</h2>
+  <p>Dosel Booklet no tiene cuentas, no pide registro y no rastrea tu actividad. No usamos analítica de terceros, ni publicidad, ni identificadores de seguimiento. La app funciona sin saber quién eres.</p>
+
+  <h2>Qué datos se procesan</h2>
+  <p><strong>Reconocimiento de audio (micrófono).</strong> Cuando pulsas «Reconocer canción», la app graba una muestra corta de audio (unos 10 segundos) a través del micrófono y la envía a nuestro servidor, que la reenvía al servicio de reconocimiento musical ACRCloud para identificar la canción. La muestra se usa solo para ese reconocimiento puntual: no se almacena en nuestros servidores, no se asocia a tu identidad y no se usa para ningún otro fin. El micrófono solo se activa mientras dura esa grabación, y solo si tú la inicias.</p>
+  <p><strong>Búsquedas de álbumes.</strong> Cuando buscas un álbum o abres su dossier, el término y el identificador del álbum se envían a nuestro servidor para generar el contexto editorial (créditos, historia, pressings). Estas consultas no se asocian a tu identidad ni a tu dispositivo.</p>
+  <p><strong>Tu biblioteca.</strong> Los álbumes que guardas y tu historial de vistas recientes se almacenan únicamente en tu dispositivo (almacenamiento local de la app). Nunca salen del teléfono y no los recibimos.</p>
+
+  <h2>Servicios de terceros</h2>
+  <p>Para reconocer canciones usamos ACRCloud (huella acústica). Para armar cada dossier consultamos fuentes públicas de metadatos musicales: Apple iTunes Search API, MusicBrainz y Discogs. La síntesis editorial se genera con la API de Anthropic (Claude). A estos servicios solo se les envía la muestra de audio a reconocer o la información del álbum consultado —nunca datos personales tuyos.</p>
+
+  <h2>Datos que NO recopilamos</h2>
+  <p>No recopilamos nombre, correo, ubicación, contactos, fotos, identificadores del dispositivo, ni datos de uso para publicidad o analítica. No grabamos audio de forma continua ni lo almacenamos. No hay cookies de seguimiento.</p>
+
+  <h2>Menores</h2>
+  <p>La app no está dirigida a menores de 13 años y no recopila conscientemente datos de ellos.</p>
+
+  <h2>Cambios</h2>
+  <p>Si esta política cambia, actualizaremos la fecha de arriba y publicaremos la nueva versión en esta misma dirección.</p>
+
+  <h2>Contacto</h2>
+  <p>Dudas sobre privacidad: <a href="mailto:info@doselaudio.com">info@doselaudio.com</a> · Dustkey LLC.</p>
+</div>
+
+<footer>
+  <div class="foot-col"><span>© 2026 Dosel Audio</span></div>
+  <div class="foot-col">
+    <a href="/">Inicio</a>
+    <a href="/soporte">Soporte</a>
+    <a href="mailto:info@doselaudio.com">info@doselaudio.com</a>
+  </div>
+</footer>
+</body>
+</html>
